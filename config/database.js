@@ -4,12 +4,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// Used CockroachDB to host the Database
 const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || '#',
-  database: process.env.DB_NAME || 'school_management',
-  port: process.env.DB_PORT || 5432
-});
+  connectionString: process.env.connectionString || 'postgresql://varun:gfVjUSct2X-HvE1W0YvLig@yeti-molerat-8089.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/school_management?sslmode=verify-full'
+})
 
 export default pool; 
