@@ -1,7 +1,8 @@
 {
   "info": {
     "name": "School Management API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "API collection for School Management System hosted at https://school-api-nk9f.onrender.com"
   },
   "item": [
     {
@@ -15,10 +16,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/addSchool",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "https://school-api-nk9f.onrender.com/api/addSchool",
+          "protocol": "https",
+          "host": ["school-api-nk9f.onrender.com"],
           "path": ["api", "addSchool"]
         },
         "body": {
@@ -38,10 +38,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/addSchool",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "https://school-api-nk9f.onrender.com/api/addSchool",
+          "protocol": "https",
+          "host": ["school-api-nk9f.onrender.com"],
           "path": ["api", "addSchool"]
         },
         "body": {
@@ -61,10 +60,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3000/api/addSchool",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "https://school-api-nk9f.onrender.com/api/addSchool",
+          "protocol": "https",
+          "host": ["school-api-nk9f.onrender.com"],
           "path": ["api", "addSchool"]
         },
         "body": {
@@ -74,60 +72,13 @@
       }
     },
     {
-      "name": "Add School - Invalid Case (Missing Fields)",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "url": {
-          "raw": "http://localhost:3000/api/addSchool",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "addSchool"]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"name\": \"Test School\",\n    \"address\": \"Test Address\"\n}"
-        }
-      }
-    },
-    {
-      "name": "Add School - Invalid Case (Invalid Coordinates)",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "url": {
-          "raw": "http://localhost:3000/api/addSchool",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "addSchool"]
-        },
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"name\": \"Invalid School\",\n    \"address\": \"Invalid Address\",\n    \"latitude\": 100,\n    \"longitude\": 200\n}"
-        }
-      }
-    },
-    {
       "name": "List Schools from Delhi Location",
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:3000/api/listSchools?latitude=28.6139&longitude=77.2090",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "https://school-api-nk9f.onrender.com/api/listSchools?latitude=28.6139&longitude=77.2090",
+          "protocol": "https",
+          "host": ["school-api-nk9f.onrender.com"],
           "path": ["api", "listSchools"],
           "query": [
             {
@@ -147,10 +98,9 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:3000/api/listSchools?latitude=19.0760&longitude=72.8777",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "https://school-api-nk9f.onrender.com/api/listSchools?latitude=19.0760&longitude=72.8777",
+          "protocol": "https",
+          "host": ["school-api-nk9f.onrender.com"],
           "path": ["api", "listSchools"],
           "query": [
             {
@@ -166,17 +116,65 @@
       }
     },
     {
-      "name": "List Schools - Invalid Case (Missing Coordinates)",
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "http://localhost:3000/api/listSchools",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "listSchools"]
+      "name": "Error Cases",
+      "item": [
+        {
+          "name": "Add School - Missing Fields",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://school-api-nk9f.onrender.com/api/addSchool",
+              "protocol": "https",
+              "host": ["school-api-nk9f.onrender.com"],
+              "path": ["api", "addSchool"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Test School\",\n    \"address\": \"Test Address\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Add School - Invalid Coordinates",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://school-api-nk9f.onrender.com/api/addSchool",
+              "protocol": "https",
+              "host": ["school-api-nk9f.onrender.com"],
+              "path": ["api", "addSchool"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Invalid School\",\n    \"address\": \"Invalid Address\",\n    \"latitude\": 100,\n    \"longitude\": 200\n}"
+            }
+          }
+        },
+        {
+          "name": "List Schools - Missing Coordinates",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://school-api-nk9f.onrender.com/api/listSchools",
+              "protocol": "https",
+              "host": ["school-api-nk9f.onrender.com"],
+              "path": ["api", "listSchools"]
+            }
+          }
         }
-      }
+      ]
     }
   ]
 } 
