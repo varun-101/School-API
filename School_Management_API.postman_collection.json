@@ -1,0 +1,182 @@
+{
+  "info": {
+    "name": "School Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add School - Valid Case",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "addSchool"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Delhi Public School\",\n    \"address\": \"123 Education Street, Delhi\",\n    \"latitude\": 28.6139,\n    \"longitude\": 77.2090\n}"
+        }
+      }
+    },
+    {
+      "name": "Add School - Mumbai Example",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "addSchool"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Mumbai International School\",\n    \"address\": \"456 Learning Road, Mumbai\",\n    \"latitude\": 19.0760,\n    \"longitude\": 72.8777\n}"
+        }
+      }
+    },
+    {
+      "name": "Add School - Bangalore Example",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "addSchool"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Bangalore Academy\",\n    \"address\": \"789 Tech Park Road, Bangalore\",\n    \"latitude\": 12.9716,\n    \"longitude\": 77.5946\n}"
+        }
+      }
+    },
+    {
+      "name": "Add School - Invalid Case (Missing Fields)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "addSchool"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Test School\",\n    \"address\": \"Test Address\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Add School - Invalid Case (Invalid Coordinates)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/addSchool",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "addSchool"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Invalid School\",\n    \"address\": \"Invalid Address\",\n    \"latitude\": 100,\n    \"longitude\": 200\n}"
+        }
+      }
+    },
+    {
+      "name": "List Schools from Delhi Location",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/listSchools?latitude=28.6139&longitude=77.2090",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "listSchools"],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "28.6139"
+            },
+            {
+              "key": "longitude",
+              "value": "77.2090"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Schools from Mumbai Location",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/listSchools?latitude=19.0760&longitude=72.8777",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "listSchools"],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "19.0760"
+            },
+            {
+              "key": "longitude",
+              "value": "72.8777"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Schools - Invalid Case (Missing Coordinates)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/listSchools",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "listSchools"]
+        }
+      }
+    }
+  ]
+} 
